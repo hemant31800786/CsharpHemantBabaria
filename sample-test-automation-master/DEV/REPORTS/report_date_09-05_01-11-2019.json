@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2019-11-01T08:05:23.666Z",
+    "end": "2019-11-01T08:05:40.117Z",
+    "duration": 16451,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8af47e0f-0540-46c1-b606-fb4258dffa3a",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "16f0256e-245c-49c0-938b-650a380b67f3",
+          "title": "TEST THE WINDOW",
+          "fullFile": "D:\\first call\\wiredData\\sample-test-automation-master\\sample-test-automation-master\\DEV\\E2E\\tests.js",
+          "file": "\\DEV\\E2E\\tests.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook",
+              "fullTitle": "TEST THE WINDOW \"before all\" hook",
+              "timedOut": false,
+              "duration": 9924,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "App = new ApplicationController();\nawait App.start();\nawait App.sleep(3000);",
+              "err": {},
+              "uuid": "a50cb93c-9b10-442a-83c1-e4c21f62160d",
+              "parentUUID": "16f0256e-245c-49c0-938b-650a380b67f3",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook",
+              "fullTitle": "TEST THE WINDOW \"after all\" hook",
+              "timedOut": false,
+              "duration": 3103,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "try {\n    await App.sleep(2000);\n    await App.stop();\n} catch (e) {}",
+              "err": {},
+              "uuid": "2b1ba05d-d1a9-44c6-9381-f324a5151c01",
+              "parentUUID": "16f0256e-245c-49c0-938b-650a380b67f3",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "pagination works",
+              "fullTitle": "TEST THE WINDOW pagination works",
+              "timedOut": false,
+              "duration": 3158,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "App.  client.elements('div.fixed-table-pagination > div.float-right.pagination > ul > li').then(async function (elems) {\n         if (elems.value.length > 2)\n         {\n              await   App.client.element('div.fixed-table-pagination > div.float-right.pagination > ul >  li:nth-child(3) >a').click();\n         };\n     });\n     await App.sleep(2000);\n     App.  client.elements('div.fixed-table-pagination > div.float-right.pagination > ul ')\n     .getText('li.page-item active')\n     .then((activelink) => console.log(activelink));\n     await App.sleep(1000);\n     await App.client.element('div.float-left pagination-detail')\n     .waitUntilWindowLoaded()\n     .getText('span.pagination-info')\n     .then((txt) => numberofEntrysmsg=txt);",
+              "err": {},
+              "uuid": "599d35aa-cbd1-4621-b211-6b90c6b9fa36",
+              "parentUUID": "16f0256e-245c-49c0-938b-650a380b67f3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "total amount of entries to be displayed works",
+              "fullTitle": "TEST THE WINDOW total amount of entries to be displayed works",
+              "timedOut": false,
+              "duration": 187,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await App.client.element('div.float-left pagination-detail')\n.waitUntilWindowLoaded()\n.getText('span.pagination-info')\n.should.eventually.equal(numberofEntrysmsg);",
+              "err": {},
+              "uuid": "14b86c81-ecb0-4379-9a83-16254c0fa497",
+              "parentUUID": "16f0256e-245c-49c0-938b-650a380b67f3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "599d35aa-cbd1-4621-b211-6b90c6b9fa36",
+            "14b86c81-ecb0-4379-9a83-16254c0fa497"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3345,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 35000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 35000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report_date",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "overwrite": "true",
+        "reportTitle": "WD-E2E-SAMPLE",
+        "reportFilename": "report_date",
+        "reportDir": "./DEV/REPORTS",
+        "reportPageTitle": "WD-E2E-SAMPLE",
+        "autoOpen": "true",
+        "timestamp": "hh-MM_dd-mm-yyyy"
+      },
+      "version": "4.0.1"
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2019-11-01T08:36:41.914Z",
+    "end": "2019-11-01T08:36:59.852Z",
+    "duration": 17938,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "87be6649-02e9-459c-8663-d270ecebc4de",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "29aef7c3-2c27-4158-b06b-b2613ee42db1",
+          "title": "TEST THE WINDOW",
+          "fullFile": "D:\\first call\\wiredData\\sample-test-automation-master\\sample-test-automation-master\\DEV\\E2E\\tests.js",
+          "file": "\\DEV\\E2E\\tests.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook",
+              "fullTitle": "TEST THE WINDOW \"before all\" hook",
+              "timedOut": false,
+              "duration": 10843,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "App = new ApplicationController();\nawait App.start();\nawait App.sleep(3000);",
+              "err": {},
+              "uuid": "4a366f06-ed1a-4caf-adbd-918f7f20cd75",
+              "parentUUID": "29aef7c3-2c27-4158-b06b-b2613ee42db1",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook",
+              "fullTitle": "TEST THE WINDOW \"after all\" hook",
+              "timedOut": false,
+              "duration": 3122,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "try {\n    await App.sleep(2000);\n    await App.stop();\n} catch (e) {}",
+              "err": {},
+              "uuid": "a7708e36-4e60-4b64-a514-50e5659d531f",
+              "parentUUID": "29aef7c3-2c27-4158-b06b-b2613ee42db1",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "pagination works",
+              "fullTitle": "TEST THE WINDOW pagination works",
+              "timedOut": false,
+              "duration": 2778,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var nagigationPage = 5;\n    await App.  client.elements('div.fixed-table-pagination > div.float-right.pagination > ul > li').then(async function (elems) {\n         if (elems.value.length > 2)\n         {\n              await   App.client.element('div.fixed-table-pagination > div.float-right.pagination > ul >  li:nth-child('+nagigationPage+') >a').click();\n         };\n     });\n    await App.sleep(2000);\n   await   App.client.element('div.fixed-table-pagination > div.float-right.pagination > ul')\n      .waitUntilWindowLoaded()\n       .getText('li.page-item.active')\n      .should.eventually.equal(String(nagigationPage-1));",
+              "err": {},
+              "uuid": "66d94880-4626-46ab-805a-b7432b4d98a4",
+              "parentUUID": "29aef7c3-2c27-4158-b06b-b2613ee42db1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "total amount of entries to be displayed works",
+              "fullTitle": "TEST THE WINDOW total amount of entries to be displayed works",
+              "timedOut": false,
+              "duration": 1007,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await App.sleep(1000);\nawait App.client.element('div.float-left pagination-detail')\n.waitUntilWindowLoaded()\n.getText('span.pagination-info')\n.should.not.be.empty;",
+              "err": {},
+              "uuid": "da6a0222-a536-44e1-8c21-7613569961c1",
+              "parentUUID": "29aef7c3-2c27-4158-b06b-b2613ee42db1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "66d94880-4626-46ab-805a-b7432b4d98a4",
+            "da6a0222-a536-44e1-8c21-7613569961c1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3785,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 35000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 35000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report_date",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "overwrite": "true",
+        "reportTitle": "WD-E2E-SAMPLE",
+        "reportFilename": "report_date",
+        "reportDir": "./DEV/REPORTS",
+        "reportPageTitle": "WD-E2E-SAMPLE",
+        "autoOpen": "true",
+        "timestamp": "hh-MM_dd-mm-yyyy"
+      },
+      "version": "4.0.1"
+    }
+  }
+}

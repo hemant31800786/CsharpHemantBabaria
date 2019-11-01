@@ -1,0 +1,172 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2019-11-01T08:25:29.119Z",
+    "end": "2019-11-01T08:25:48.742Z",
+    "duration": 19623,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ba86baa8-6cb4-4356-a2a5-0297dc0e9de9",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8370e95c-759d-4945-ab5d-1020a8cbf29e",
+          "title": "TEST THE WINDOW",
+          "fullFile": "D:\\first call\\wiredData\\sample-test-automation-master\\sample-test-automation-master\\DEV\\E2E\\tests.js",
+          "file": "\\DEV\\E2E\\tests.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook",
+              "fullTitle": "TEST THE WINDOW \"before all\" hook",
+              "timedOut": false,
+              "duration": 9554,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "App = new ApplicationController();\nawait App.start();\nawait App.sleep(3000);",
+              "err": {},
+              "uuid": "8f091456-933c-4263-9eff-774ea6e15fb3",
+              "parentUUID": "8370e95c-759d-4945-ab5d-1020a8cbf29e",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook",
+              "fullTitle": "TEST THE WINDOW \"after all\" hook",
+              "timedOut": false,
+              "duration": 7169,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "try {\n    await App.sleep(2000);\n    await App.stop();\n} catch (e) {}",
+              "err": {},
+              "uuid": "3006644e-e2e3-4263-b198-62d980ae95de",
+              "parentUUID": "8370e95c-759d-4945-ab5d-1020a8cbf29e",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "pagination works",
+              "fullTitle": "TEST THE WINDOW pagination works",
+              "timedOut": false,
+              "duration": 2529,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await App.  client.elements('div.fixed-table-pagination > div.float-right.pagination > ul > li').then(async function (elems) {\n         if (elems.value.length > 2)\n         {\n              await   App.client.element('div.fixed-table-pagination > div.float-right.pagination > ul >  li:nth-child(4) >a').click();\n         };\n     });\n    await App.sleep(2000);\n   await   App.client.element('div.fixed-table-pagination > div.float-right.pagination > ul')\n      .waitUntilWindowLoaded()\n       .getText('li.page-item.active')\n      .should.eventually.equal('2');\n    //  await App.sleep(1000);\n    //  await App.client.element('div.float-left pagination-detail')\n    //  .waitUntilWindowLoaded()\n    //  .getText('span.pagination-info')\n    //  .then((txt) => numberofEntrysmsg=txt);",
+              "err": {
+                "message": "AssertionError: expected '3' to equal '2'",
+                "estack": "AssertionError: expected '3' to equal '2'\n    at Object.<anonymous> (node_modules\\chai-as-promised\\lib\\chai-as-promised.js:302:22)\n    at Object.exec (node_modules\\webdriverio\\build\\lib\\helpers\\safeExecute.js:28:24)\n    at Object.resolve (node_modules\\webdriverio\\build\\lib\\webdriverio.js:190:29)\n    at D:\\first call\\wiredData\\sample-test-automation-master\\sample-test-automation-master\\node_modules\\webdriverio\\build\\lib\\webdriverio.js:539:32\n    at _fulfilled (node_modules\\q\\q.js:854:54)\n    at D:\\first call\\wiredData\\sample-test-automation-master\\sample-test-automation-master\\node_modules\\q\\q.js:883:30\n    at Promise.promise.promiseDispatch (node_modules\\q\\q.js:816:13)\n    at D:\\first call\\wiredData\\sample-test-automation-master\\sample-test-automation-master\\node_modules\\q\\q.js:624:44\n    at runSingle (node_modules\\q\\q.js:137:13)\n    at flush (node_modules\\q\\q.js:125:13)\n    at processTicksAndRejections (internal/process/task_queues.js:82:9)",
+                "diff": "- 3\n+ 2\n"
+              },
+              "uuid": "d970678e-4db8-478d-af1c-c43c2de98748",
+              "parentUUID": "8370e95c-759d-4945-ab5d-1020a8cbf29e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "total amount of entries to be displayed works",
+              "fullTitle": "TEST THE WINDOW total amount of entries to be displayed works",
+              "timedOut": false,
+              "duration": 191,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await App.client.element('div.float-left pagination-detail')\n.waitUntilWindowLoaded()\n.getText('span.pagination-info')\n.should.eventually.equal(numberofEntrysmsg);",
+              "err": {
+                "message": "AssertionError: expected 'Showing 21 to 30 of 800 rows' to equal undefined",
+                "estack": "AssertionError: expected 'Showing 21 to 30 of 800 rows' to equal undefined\n    at Object.<anonymous> (node_modules\\chai-as-promised\\lib\\chai-as-promised.js:302:22)\n    at Object.exec (node_modules\\webdriverio\\build\\lib\\helpers\\safeExecute.js:28:24)\n    at Object.resolve (node_modules\\webdriverio\\build\\lib\\webdriverio.js:190:29)\n    at D:\\first call\\wiredData\\sample-test-automation-master\\sample-test-automation-master\\node_modules\\webdriverio\\build\\lib\\webdriverio.js:539:32\n    at _fulfilled (node_modules\\q\\q.js:854:54)\n    at D:\\first call\\wiredData\\sample-test-automation-master\\sample-test-automation-master\\node_modules\\q\\q.js:883:30\n    at Promise.promise.promiseDispatch (node_modules\\q\\q.js:816:13)\n    at D:\\first call\\wiredData\\sample-test-automation-master\\sample-test-automation-master\\node_modules\\q\\q.js:624:44\n    at runSingle (node_modules\\q\\q.js:137:13)\n    at flush (node_modules\\q\\q.js:125:13)\n    at processTicksAndRejections (internal/process/task_queues.js:82:9)",
+                "diff": null
+              },
+              "uuid": "b4457b8a-1ab3-4888-b893-c1a321d2d9c1",
+              "parentUUID": "8370e95c-759d-4945-ab5d-1020a8cbf29e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d970678e-4db8-478d-af1c-c43c2de98748",
+            "b4457b8a-1ab3-4888-b893-c1a321d2d9c1"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2720,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 35000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 35000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report_date",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "overwrite": "true",
+        "reportTitle": "WD-E2E-SAMPLE",
+        "reportFilename": "report_date",
+        "reportDir": "./DEV/REPORTS",
+        "reportPageTitle": "WD-E2E-SAMPLE",
+        "autoOpen": "true",
+        "timestamp": "hh-MM_dd-mm-yyyy"
+      },
+      "version": "4.0.1"
+    }
+  }
+}

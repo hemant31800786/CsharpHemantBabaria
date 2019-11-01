@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2019-11-01T08:18:21.929Z",
+    "end": "2019-11-01T08:18:38.551Z",
+    "duration": 16622,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "16c8f717-3a55-4dca-94a8-3f8419d27c6e",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3f78c68c-2b92-4907-b87a-41f7ba19f0a8",
+          "title": "TEST THE WINDOW",
+          "fullFile": "D:\\first call\\wiredData\\sample-test-automation-master\\sample-test-automation-master\\DEV\\E2E\\tests.js",
+          "file": "\\DEV\\E2E\\tests.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook",
+              "fullTitle": "TEST THE WINDOW \"before all\" hook",
+              "timedOut": false,
+              "duration": 10685,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "App = new ApplicationController();\nawait App.start();\nawait App.sleep(3000);",
+              "err": {},
+              "uuid": "527a1b30-88a6-42ea-9976-534bf9a0f262",
+              "parentUUID": "3f78c68c-2b92-4907-b87a-41f7ba19f0a8",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook",
+              "fullTitle": "TEST THE WINDOW \"after all\" hook",
+              "timedOut": false,
+              "duration": 3123,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "try {\n    await App.sleep(2000);\n    await App.stop();\n} catch (e) {}",
+              "err": {},
+              "uuid": "a03582bf-a7ca-4e27-8591-7f0a64fe8a47",
+              "parentUUID": "3f78c68c-2b92-4907-b87a-41f7ba19f0a8",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "pagination works",
+              "fullTitle": "TEST THE WINDOW pagination works",
+              "timedOut": false,
+              "duration": 2247,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//  App.  client.elements('div.fixed-table-pagination > div.float-right.pagination > ul > li').then(async function (elems) {\n    //      if (elems.value.length > 2)\n    //      {\n    //           await   App.client.element('div.fixed-table-pagination > div.float-right.pagination > ul >  li:nth-child(3) >a').click();\n    //      };\n    //  });\n    await App.sleep(1000);\n   // App.client.element('div.fixed-table-pagination > div.float-right.pagination > ul >  li:nth-child(3)').getAttribute('class').should.eventually.match('active');\n    App.client.element('div.fixed-table-pagination > div.float-right.pagination > ul')\n    \n    //  await App.sleep(2000);\n    //  App.client.element('li.page-item.active')\n      .waitUntilWindowLoaded()\n      .getText('li.page-item.active')\n      .then((activelink) => console.log(activelink));\n     await App.sleep(1000);\n     await App.client.element('div.float-left pagination-detail')\n     .waitUntilWindowLoaded()\n     .getText('span.pagination-info')\n     .then((txt) => numberofEntrysmsg=txt);",
+              "err": {},
+              "uuid": "4aa7ccb0-d5fc-47aa-8aeb-151a589a8ed1",
+              "parentUUID": "3f78c68c-2b92-4907-b87a-41f7ba19f0a8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "total amount of entries to be displayed works",
+              "fullTitle": "TEST THE WINDOW total amount of entries to be displayed works",
+              "timedOut": false,
+              "duration": 267,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await App.client.element('div.float-left pagination-detail')\n.waitUntilWindowLoaded()\n.getText('span.pagination-info')\n.should.eventually.equal(numberofEntrysmsg);",
+              "err": {},
+              "uuid": "a03b770c-8879-4bc1-8a6d-3175d5f4a13c",
+              "parentUUID": "3f78c68c-2b92-4907-b87a-41f7ba19f0a8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4aa7ccb0-d5fc-47aa-8aeb-151a589a8ed1",
+            "a03b770c-8879-4bc1-8a6d-3175d5f4a13c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2514,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 35000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 35000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report_date",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "overwrite": "true",
+        "reportTitle": "WD-E2E-SAMPLE",
+        "reportFilename": "report_date",
+        "reportDir": "./DEV/REPORTS",
+        "reportPageTitle": "WD-E2E-SAMPLE",
+        "autoOpen": "true",
+        "timestamp": "hh-MM_dd-mm-yyyy"
+      },
+      "version": "4.0.1"
+    }
+  }
+}
